@@ -2,8 +2,11 @@ import { Request, Response } from "express";
 import { User } from "../models/user";
 import bcrypt from 'bcrypt';
 import Token from "../classes/token";
+import FileSystem from "../classes/fileSystem";
 
 export class UserController {
+
+    public fileSystem = new FileSystem();
 
     constructor() { }
 
@@ -100,12 +103,12 @@ export class UserController {
         const body = req.body;
 
         const user = {
-            nickname: body.nickname || req.user.nickname,
-            password: body.password || req.user.password,
-            image: body.image || req.user.image
+            email: body.email || body.email,
+            password: body.password || body.password,
+            image: body.image || body.image
         }
 
-        User.findByIdAndUpdate( req.user.id, user, { new: true }, ( err, userDB: any ) => {
+        User.findByIdAndUpdate( req.user.id , user, { new: true }, ( err, userDB: any ) => {
 
             if ( err ) throw err;
             
@@ -128,7 +131,7 @@ export class UserController {
                 nickname: userDB.nickname,
                 image: userDB.image
 
-            });
+            })
 
             res.json({
                 ok: true,
@@ -137,6 +140,46 @@ export class UserController {
             });
 
         });
+
+    }
+
+    public async uploadImage( req: any, res: Response ) {
+
+        if ( !req.files ) {
+
+            return res.status(400).json({
+                ok: false,
+                message: 'there arent any file'
+            })
+
+        }
+
+        const file = req.files.image;
+
+        if ( !file ) {
+
+            return res.status(400).json({
+                ok: false,
+                message: 'there arent any file uploaded'
+            })
+
+        }
+
+        if ( !file.mimetype.includes('image') ) {
+
+            return res.status(400).json({
+                ok: false,
+                message: 'this isnt a valid file'
+            })
+
+        }
+
+        await this.fileSystem.saveImageTemp( file, req.user.id );
+
+        res.json({
+            ok: true,
+            file
+        })
 
     }
 

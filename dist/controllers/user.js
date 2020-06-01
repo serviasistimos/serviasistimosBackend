@@ -15,8 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const user_1 = require("../models/user");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const token_1 = __importDefault(require("../classes/token"));
+const fileSystem_1 = __importDefault(require("../classes/fileSystem"));
 class UserController {
-    constructor() { }
+    constructor() {
+        this.fileSystem = new fileSystem_1.default();
+    }
     createUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const body = req.body;
@@ -90,9 +93,9 @@ class UserController {
     updateUser(req, res) {
         const body = req.body;
         const user = {
-            nickname: body.nickname || req.user.nickname,
-            password: body.password || req.user.password,
-            image: body.image || req.user.image
+            email: body.email || body.email,
+            password: body.password || body.password,
+            image: body.image || body.image
         };
         user_1.User.findByIdAndUpdate(req.user.id, user, { new: true }, (err, userDB) => {
             if (err)
@@ -116,6 +119,34 @@ class UserController {
                 ok: true,
                 token: tokenUser,
                 user: userDB
+            });
+        });
+    }
+    uploadImage(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (!req.files) {
+                return res.status(400).json({
+                    ok: false,
+                    message: 'there arent any file'
+                });
+            }
+            const file = req.files.image;
+            if (!file) {
+                return res.status(400).json({
+                    ok: false,
+                    message: 'there arent any file uploaded'
+                });
+            }
+            if (!file.mimetype.includes('image')) {
+                return res.status(400).json({
+                    ok: false,
+                    message: 'this isnt a valid file'
+                });
+            }
+            yield this.fileSystem.saveImageTemp(file, req.user.id);
+            res.json({
+                ok: true,
+                file
             });
         });
     }
