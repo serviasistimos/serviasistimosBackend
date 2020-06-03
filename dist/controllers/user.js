@@ -92,10 +92,11 @@ class UserController {
     }
     updateUser(req, res) {
         const body = req.body;
+        const images = this.fileSystem.imagesSinceTempToPost(req.user.id);
         const user = {
             email: body.email || body.email,
             password: body.password || body.password,
-            image: body.image || body.image
+            image: images
         };
         user_1.User.findByIdAndUpdate(req.user.id, user, { new: true }, (err, userDB) => {
             if (err)
@@ -147,6 +148,23 @@ class UserController {
             res.json({
                 ok: true,
                 file
+            });
+        });
+    }
+    showImage(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const userId = req.params.userId;
+            const img = req.params.img;
+            const pathPhoto = this.fileSystem.getFotoURL(userId, img);
+            res.sendFile(pathPhoto);
+        });
+    }
+    getUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const user = req.user;
+            res.json({
+                ok: true,
+                user
             });
         });
     }

@@ -10,7 +10,7 @@ export class UserController {
 
     constructor() { }
 
-    public async createUser( req: Request, res: Response ) {
+    public async createUser( req: any, res: Response ) {
 
         const body = req.body;
 
@@ -102,10 +102,12 @@ export class UserController {
 
         const body = req.body;
 
+        const images = this.fileSystem.imagesSinceTempToPost( req.user.id );
+
         const user = {
             email: body.email || body.email,
             password: body.password || body.password,
-            image: body.image || body.image
+            image: images
         }
 
         User.findByIdAndUpdate( req.user.id , user, { new: true }, ( err, userDB: any ) => {
@@ -179,6 +181,28 @@ export class UserController {
         res.json({
             ok: true,
             file
+        })
+
+    }
+
+    public async showImage( req: any, res: Response ) {
+
+        const userId = req.params.userId;
+        const img = req.params.img;
+
+        const pathPhoto = this.fileSystem.getFotoURL( userId, img );
+
+        res.sendFile( pathPhoto );
+
+    }
+
+    public async getUser( req: any, res: Response ) {
+
+        const user = req.user;
+
+        res.json({
+            ok: true,
+            user
         })
 
     }

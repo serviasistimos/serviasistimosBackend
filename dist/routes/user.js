@@ -9,4 +9,6 @@ userRoutes.post('/create', (req, res) => { userController.createUser(req, res); 
 userRoutes.post('/login', (req, res) => { userController.login(req, res); });
 userRoutes.post('/update', authentication_1.verifyToken, (req, res) => { userController.updateUser(req, res); });
 userRoutes.post('/uploadImage', authentication_1.verifyToken, (req, res) => { userController.uploadImage(req, res); });
+userRoutes.get('/image/:userId/:img', (req, res) => { userController.showImage(req, res); });
+userRoutes.get('/getUser', authentication_1.verifyToken, (req, res) => { userController.getUser(req, res); });
 exports.default = userRoutes;

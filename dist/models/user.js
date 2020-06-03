@@ -32,10 +32,10 @@ const userSchema = new mongoose_1.Schema({
         type: String,
         required: [true, 'the password is necessary']
     },
-    image: {
-        type: String,
-        default: 'iron.png'
-    }
+    image: [{
+            type: String,
+            default: 'iron.png'
+        }]
 });
 userSchema.method('comparePassword', function (password = '') {
     if (bcrypt_1.default.compareSync(password, this.password)) {

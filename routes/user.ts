@@ -10,6 +10,8 @@ userRoutes.post('/create', ( req: Request, res: Response ) => { userController.c
 userRoutes.post('/login', ( req: Request, res: Response ) => { userController.login(req, res) });
 userRoutes.post('/update', verifyToken, ( req: any, res: Response ) => { userController.updateUser(req, res) });
 userRoutes.post('/uploadImage', verifyToken, ( req: any, res: Response ) => { userController.uploadImage(req, res) });
+userRoutes.get('/image/:userId/:img', ( req: any, res: Response ) => { userController.showImage(req, res) });
+userRoutes.get('/getUser', verifyToken, ( req: any, res: Response ) => { userController.getUser(req, res) });
 
 export default 
     userRoutes;

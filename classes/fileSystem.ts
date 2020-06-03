@@ -16,7 +16,7 @@ export default class FileSystem {
         //createOriginal name file
         const nameFile = this.createOriginalName( file.name );
 
-        //move file sense temp folder to own folder
+        //move file since temp folder to own folder
         file.mv( `${ path }/${ nameFile }`, ( err: any ) => {
 
             if ( err ) {
@@ -61,6 +61,51 @@ export default class FileSystem {
         }
 
         return pathUserTemp;
+
+    }
+
+    public imagesSinceTempToPost( userId: any ) {
+
+        const pathTemp = path.resolve( __dirname, '../uploads', userId, 'temp' );
+        const pathPost = path.resolve( __dirname, '../uploads', userId, 'posts' );
+
+        if ( !fs.existsSync( pathTemp ) ) {
+            return [];
+        }
+
+        if ( !fs.existsSync( pathPost ) ) {
+            fs.mkdirSync( pathPost );
+        }
+
+        const imagesTemp = this.getImagesSinceTemp( userId );
+
+        imagesTemp.forEach( image => {
+            fs.renameSync( `${ pathTemp }/${ image }`, `${ pathPost }/${ image }` )
+        });
+
+        return imagesTemp;
+
+    }
+
+    private getImagesSinceTemp( userId: any ) {
+
+        const pathTemp = path.resolve( __dirname, '../uploads', userId, 'temp' );
+
+        return fs.readdirSync( pathTemp ) || [];
+
+    }
+
+    getFotoURL( userId: string, img: string ) {
+
+        const pathPhoto = path.resolve( __dirname, '../uploads', userId, 'posts', img );
+
+        const exist = fs.existsSync( pathPhoto );
+
+        if ( !exist ) {
+            return path.resolve( __dirname, '../assets/original.jpg' );
+        }
+
+        return pathPhoto;
 
     }
 

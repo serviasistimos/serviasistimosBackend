@@ -29,10 +29,10 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'the password is necessary']
     },
-    image: {
+    image: [{
         type: String,
         default: 'iron.png'
-    }
+    }]
 });
 
 userSchema.method( 'comparePassword', function( password: string = '' ): boolean {
@@ -56,7 +56,7 @@ interface IUser extends Document {
     role: string;
     email: string;
     password: string;
-    image: string;
+    image: string[];
 
     comparePassword( password: string ): boolean;
 }
