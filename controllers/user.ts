@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../models/user";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import Token from "../classes/token";
 import FileSystem from "../classes/fileSystem";
 

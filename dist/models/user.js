@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const userSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -38,7 +38,7 @@ const userSchema = new mongoose_1.Schema({
         }]
 });
 userSchema.method('comparePassword', function (password = '') {
-    if (bcrypt_1.default.compareSync(password, this.password)) {
+    if (bcryptjs_1.default.compareSync(password, this.password)) {
         return true;
     }
     else {

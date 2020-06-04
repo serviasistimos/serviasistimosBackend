@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const user_1 = require("../models/user");
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const token_1 = __importDefault(require("../classes/token"));
 const fileSystem_1 = __importDefault(require("../classes/fileSystem"));
 class UserController {
@@ -30,7 +30,7 @@ class UserController {
                 role: body.role,
                 email: body.email,
                 nickname: body.nickname,
-                password: bcrypt_1.default.hashSync(body.password, 10),
+                password: bcryptjs_1.default.hashSync(body.password, 10),
                 image: body.image
             };
             yield user_1.User.create(user).then(userDB => {
