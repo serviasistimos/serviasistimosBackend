@@ -1,15 +1,10 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.9.0",
-    "npm": "6.10.2"
-  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "David rodriguez",
   "license": "ISC",
