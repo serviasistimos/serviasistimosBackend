@@ -36,7 +36,8 @@ server.app.use((req, res, next) => {
 });
 //connection BD
 // mongodb://localhost:27017/serviAsistimos
-mongoose_1.default.connect('mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority', {
+//mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority
+mongoose_1.default.connect('mongodb://localhost:27017/serviAsistimos', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
