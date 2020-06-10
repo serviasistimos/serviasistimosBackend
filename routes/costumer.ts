@@ -3,10 +3,10 @@ import { CostumerController } from '../controllers/costumer';
 import { verifyToken } from "../middlewares/authentication";
 
 
-const CostumerRoutes = Router();
+const costumerRoutes = Router();
 const costumerController = new CostumerController();
 
-CostumerRoutes.post('/createCostumer', verifyToken, ( req: Request, res: Response ) => { costumerController.createCostumer(req, res) });
+costumerRoutes.post('/createCostumer', verifyToken, ( req: Request, res: Response ) => { costumerController.createCostumer(req, res) });
 
 export default 
-    CostumerRoutes;
+    costumerRoutes;

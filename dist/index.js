@@ -26,18 +26,10 @@ server.app.use('/technical', technical_1.default);
 server.app.use('/costumer', costumer_1.default);
 server.app.use('/service', service_1.default);
 server.app.use('/request', request_1.default);
-// Configurar cabeceras y cors
-server.app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
-});
 //connection BD
 // mongodb://localhost:27017/serviAsistimos
 //mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority
-mongoose_1.default.connect('mongodb://localhost:27017/serviAsistimos', {
+mongoose_1.default.connect('mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

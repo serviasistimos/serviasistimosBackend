@@ -3,10 +3,10 @@ import { TechnicalController } from '../controllers/technical';
 import { verifyToken } from "../middlewares/authentication";
 
 
-const TechnicalRoutes = Router();
+const technicalRoutes = Router();
 const technicalController = new TechnicalController();
 
-TechnicalRoutes.post('/createTechnical', verifyToken, ( req: Request, res: Response ) => { technicalController.createTechnical(req, res) });
+technicalRoutes.post('/createTechnical', verifyToken, ( req: Request, res: Response ) => { technicalController.createTechnical(req, res) });
 
 export default 
-    TechnicalRoutes;
+    technicalRoutes;
