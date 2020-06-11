@@ -78,7 +78,8 @@ class UserController {
                     });
                     res.json({
                         ok: true,
-                        token: tokenUser
+                        token: tokenUser,
+                        user: userDB
                     });
                 }
                 else {
@@ -159,12 +160,48 @@ class UserController {
             res.sendFile(pathPhoto);
         });
     }
-    getUser(req, res) {
+    getUserById(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const user = req.user;
-            res.json({
-                ok: true,
-                user
+            var userId = req.params.id;
+            user_1.User.findById(userId, function (err, user) {
+                if (user) {
+                    res.json({
+                        ok: true,
+                        message: 'get user successfull',
+                        user: user
+                    });
+                }
+                if (err) {
+                    res.json({
+                        ok: false,
+                        message: 'get user failed',
+                        err: err
+                    });
+                }
+            });
+        });
+    }
+    getUsers(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            user_1.User.find()
+                .then(users => {
+                res.json({
+                    ok: true,
+                    users: users
+                });
+                if (!users) {
+                    res.json({
+                        ok: null,
+                        message: 'there aren´t users registered'
+                    });
+                }
+            })
+                .catch(err => {
+                res.json({
+                    ok: false,
+                    err: err,
+                    message: 'get users failed'
+                });
             });
         });
     }

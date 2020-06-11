@@ -84,7 +84,8 @@ export class UserController {
 
                 res.json({
                     ok: true,
-                    token: tokenUser
+                    token: tokenUser,
+                    user: userDB
                 });
 
             }else {
@@ -196,15 +197,64 @@ export class UserController {
 
     }
 
-    public async getUser( req: any, res: Response ) {
+    public async getUserById( req: any, res: Response ) {
+ 
+        var userId = req.params.id;
+        User.findById(userId, function( err, user ) {
 
-        const user = req.user;
+            if ( user ) {
 
-        res.json({
-            ok: true,
-            user
+                res.json({
+                    ok: true,
+                    message: 'get user successfull',
+                    user: user
+                })
+
+            }
+
+            if ( err ) {
+
+                res.json({
+                    ok: false,
+                    message: 'get user failed',
+                    err: err
+                })
+
+            }
+            
+
         })
 
+    }
+
+    public async getUsers( req: any, res: Response ) {
+
+        User.find()
+        .then( users => {
+
+            res.json({
+                ok: true,
+                users: users
+            });
+            if ( !users ) {
+
+                res.json({
+                    ok: null,
+                    message: 'there aren´t users registered'
+                })
+
+            }
+
+        })
+        .catch( err => {
+
+            res.json({
+                ok: false,
+                err: err,
+                message: 'get users failed'
+            });
+
+        });
     }
 
 }
