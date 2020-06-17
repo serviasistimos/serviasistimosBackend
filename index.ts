@@ -31,7 +31,7 @@ server.app.use('/request', requestRoutes);
 //connection BD
 // mongodb://localhost:27017/serviAsistimos
 //mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority
-mongoose.connect('mongodb://localhost:27017/serviAsistimos',
+mongoose.connect('mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority',
                 {
                     useNewUrlParser: true,
                     useCreateIndex: true,
