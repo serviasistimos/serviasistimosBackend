@@ -7,4 +7,7 @@ const requestRoutes = express_1.Router();
 const requestController = new request_1.RequestController();
 requestRoutes.post('/createRequest', [authentication_1.verifyToken], (req, res) => { requestController.createRequest(req, res); });
 requestRoutes.get('/getRequests', [authentication_1.verifyToken], (req, res) => { requestController.getRequest(req, res); });
+requestRoutes.get('/request/:id', authentication_1.verifyToken, (req, res) => { requestController.getRequestById(req, res); });
+requestRoutes.put('/updateRequest/:id', authentication_1.verifyToken, (req, res) => { requestController.updateRequest(req, res); });
+requestRoutes.delete('/deleteRequest/:id', authentication_1.verifyToken, (req, res) => { requestController.deleteRequest(req, res); });
 exports.default = requestRoutes;

@@ -60,5 +60,88 @@ class RequestController {
             });
         });
     }
+    getRequestById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var requestId = req.params.id;
+            request_1.Requests.findById(requestId, function (err, requestBD) {
+                if (err) {
+                    throw err;
+                }
+                if (!requestBD) {
+                    res.json({
+                        ok: false,
+                        status: 401,
+                        message: 'request dont exist'
+                    });
+                }
+                else {
+                    res.json({
+                        ok: true,
+                        status: 200,
+                        message: 'get request success',
+                        request: requestBD
+                    });
+                }
+            });
+        });
+    }
+    updateRequest(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var requestId = req.params.id;
+            const user = req.user.id;
+            var body = req.body;
+            const requestUpdate = {
+                reference: body.reference,
+                phone: body.phone,
+                address: body.address,
+                city: body.city,
+                department: body.department,
+                state: body.state,
+                costumer: body.costumer,
+                service: body.service,
+                technical: body.technical,
+                user: user
+            };
+            request_1.Requests.findByIdAndUpdate(requestId, requestUpdate, { new: true }, (err, requestDB) => {
+                if (err)
+                    throw err;
+                if (!requestDB) {
+                    res.json({
+                        ok: false,
+                        message: 'this request dont exist'
+                    });
+                }
+                else {
+                    res.json({
+                        ok: true,
+                        message: 'upload request success',
+                        request: requestDB
+                    });
+                }
+            });
+        });
+    }
+    deleteRequest(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var requestId = req.params.id;
+            yield request_1.Requests.findByIdAndDelete(requestId, (err, requestDB) => {
+                if (err) {
+                    throw err;
+                }
+                if (!requestDB) {
+                    res.json({
+                        ok: false,
+                        message: 'this request dont exist'
+                    });
+                }
+                else {
+                    res.json({
+                        ok: true,
+                        message: 'delete request success'
+                    });
+                }
+            });
+        });
+    }
 }
 exports.RequestController = RequestController;

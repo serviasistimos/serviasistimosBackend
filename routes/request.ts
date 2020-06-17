@@ -8,6 +8,9 @@ const requestController = new RequestController();
 
 requestRoutes.post('/createRequest', [ verifyToken ], ( req: Request, res: Response ) => {requestController.createRequest(req, res) });
 requestRoutes.get('/getRequests', [ verifyToken ], ( req: Request, res: Response ) => {requestController.getRequest(req, res) });
+requestRoutes.get('/request/:id', verifyToken, ( req: Request, res: Response ) => { requestController.getRequestById(req, res) });
+requestRoutes.put('/updateRequest/:id', verifyToken, ( req: Request, res: Response ) => { requestController.updateRequest(req, res) });
+requestRoutes.delete('/deleteRequest/:id', verifyToken, ( req: Request, res: Response ) => { requestController.deleteRequest(req, res) });
 
 export default
     requestRoutes;

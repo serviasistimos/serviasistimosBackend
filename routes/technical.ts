@@ -7,6 +7,10 @@ const technicalRoutes = Router();
 const technicalController = new TechnicalController();
 
 technicalRoutes.post('/createTechnical', verifyToken, ( req: Request, res: Response ) => { technicalController.createTechnical(req, res) });
+technicalRoutes.put('/updateTechnical/:id', verifyToken, ( req: Request, res: Response ) => { technicalController.updateTechnical(req, res) });
+technicalRoutes.delete('/deleteTechnical/:id', verifyToken, ( req: Request, res: Response ) => { technicalController.deleteTechnical(req, res) });
+technicalRoutes.get('/technicals', verifyToken, ( req: Request, res: Response ) => { technicalController.getTechnicals(req, res) });
+technicalRoutes.get('/technical/:id', verifyToken, ( req: Request, res: Response ) => { technicalController.getTechnicalById(req, res) });
 
-export default 
+export default
     technicalRoutes;

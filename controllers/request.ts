@@ -61,4 +61,90 @@ export class RequestController {
 
     }
 
+    public async getRequestById( req: Request, res: Response ) {
+
+        var requestId = req.params.id;
+        Requests.findById( requestId, function( err, requestBD ) {
+
+            if ( err ) { throw err; }
+            if( !requestBD ) {
+                res.json({
+                    ok: false,
+                    status: 401,
+                    message: 'request dont exist'
+                })
+            } else {
+                res.json({
+                    ok: true,
+                    status: 200,
+                    message: 'get request success',
+                    request: requestBD
+                })
+            }
+
+        })
+
+    }
+
+    public async updateRequest( req: any, res: Response ) {
+
+        var requestId = req.params.id;
+        const user = req.user.id;
+        var body = req.body;                
+
+        const requestUpdate = {
+            reference: body.reference,
+            phone: body.phone,
+            address: body.address,
+            city: body.city,
+            department: body.department,
+            state: body.state,
+            costumer: body.costumer,
+            service: body.service,
+            technical: body.technical,
+            user: user
+        }
+
+        Requests.findByIdAndUpdate( requestId, requestUpdate, { new: true }, ( err, requestDB ) => {
+
+            if ( err ) throw err;
+
+            if ( !requestDB ) {
+                res.json({
+                    ok: false,
+                    message: 'this request dont exist'
+                })
+            } else {
+                res.json({
+                    ok: true,
+                    message: 'upload request success',
+                    request: requestDB
+                })
+            }
+
+        });
+
+    }
+
+    public async deleteRequest( req: any, res: Response ) {
+
+        var requestId = req.params.id;
+        await Requests.findByIdAndDelete( requestId, ( err, requestDB ) => {
+
+            if ( err ) { throw err; }
+            if ( !requestDB ) {
+                res.json({
+                    ok: false,
+                    message: 'this request dont exist'
+                })
+            } else {
+                res.json({
+                    ok: true,
+                    message: 'delete request success'
+                }) 
+            }
+
+        });
+    }
+
 }
