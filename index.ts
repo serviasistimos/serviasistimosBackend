@@ -9,6 +9,7 @@ import costumerRoutes from './routes/costumer';
 import serviceRoutes from './routes/service';
 import requestRoutes from './routes/request';
 import userRoutes from './routes/user';
+import insuranceCostumerRoutes from './routes/insuranceCostumer';
 
 
 const server = new Server();
@@ -27,6 +28,7 @@ server.app.use('/technical', technicalRoutes);
 server.app.use('/costumer', costumerRoutes);
 server.app.use('/service', serviceRoutes);
 server.app.use('/request', requestRoutes);
+server.app.use('/insuranceCostumer', insuranceCostumerRoutes);
 
 //connection BD
 // mongodb://localhost:27017/serviAsistimos

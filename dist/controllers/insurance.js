@@ -18,7 +18,7 @@ class InsuranceController {
                 res.json({
                     ok: true,
                     message: 'get insurances success',
-                    costumers: insurances
+                    insurance: insurances
                 });
                 if (!insurances) {
                     res.json({

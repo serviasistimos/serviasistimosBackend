@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const insuranceCostumer_1 = require("../controllers/insuranceCostumer");
+const authentication_1 = require("../middlewares/authentication");
+const insuranceCostumerRoutes = express_1.Router();
+const insuranceCostumerController = new insuranceCostumer_1.InsuranceCostumerController();
+insuranceCostumerRoutes.post('/createInsuranceCostumer', authentication_1.verifyToken, (req, res) => { insuranceCostumerController.createInsuranceCostumer(req, res); });
+insuranceCostumerRoutes.put('/updateInsuranceCostumer/:id', authentication_1.verifyToken, (req, res) => { insuranceCostumerController.updateInsuranceCostumer(req, res); });
+insuranceCostumerRoutes.delete('/deleteInsuranceCostumer/:id', authentication_1.verifyToken, (req, res) => { insuranceCostumerController.deleteInsuranceCostumer(req, res); });
+insuranceCostumerRoutes.get('/insurancesCostumers', authentication_1.verifyToken, (req, res) => { insuranceCostumerController.getInsurancesCostumers(req, res); });
+insuranceCostumerRoutes.get('/insuranceCostumer/:id', authentication_1.verifyToken, (req, res) => { insuranceCostumerController.getInsuranceCostumerById(req, res); });
+exports.default = insuranceCostumerRoutes;
