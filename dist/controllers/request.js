@@ -10,6 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const request_1 = require("../models/request");
+const service_1 = require("../models/service");
+const technical_1 = require("../models/technical");
+const costumer_1 = require("../models/costumer");
 class RequestController {
     constructor() { }
     createRequest(req, res) {
@@ -17,6 +20,9 @@ class RequestController {
             const body = req.body;
             const user = req.user.id;
             const request = {
+                valueMaterials: body.valueMaterials,
+                valueAsistimos: body.valueAsistimos,
+                valueCostumer: body.valueCostumer,
                 reference: body.reference,
                 phone: body.phone,
                 address: body.address,
@@ -30,9 +36,18 @@ class RequestController {
             };
             yield request_1.Requests.create(request).then((requestDB) => __awaiter(this, void 0, void 0, function* () {
                 yield requestDB.populate('user', '-password').execPopulate();
-                res.json({
-                    ok: true,
-                    request: requestDB
+                yield service_1.Service.findById(request.service, function (err, serviceBD) {
+                    technical_1.Technical.findById(request.technical, function (err, technicalBD) {
+                        costumer_1.Costumer.findById(request.costumer, function (err, costumerBD) {
+                            res.json({
+                                ok: true,
+                                request: requestDB,
+                                service: serviceBD,
+                                technical: technicalBD,
+                                costumer: costumerBD
+                            });
+                        });
+                    });
                 });
             })).catch(err => {
                 res.json({
@@ -91,6 +106,9 @@ class RequestController {
             const user = req.user.id;
             var body = req.body;
             const requestUpdate = {
+                valueMaterials: body.valueMaterials,
+                valueAsistimos: body.valueAsistimos,
+                valueCostumer: body.valueCostumer,
                 reference: body.reference,
                 phone: body.phone,
                 address: body.address,

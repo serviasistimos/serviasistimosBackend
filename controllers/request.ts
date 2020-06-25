@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
 import { Requests } from "../models/request";
+import { Service } from "../models/service";
+import { Technical } from "../models/technical";
+import { Costumer } from "../models/costumer";
 
 export class RequestController {
 
@@ -11,6 +14,9 @@ export class RequestController {
         const user = req.user.id;
 
         const request = {
+        valueMaterials: body.valueMaterials,
+        valueAsistimos: body.valueAsistimos,
+        valueCostumer: body.valueCostumer,
         reference: body.reference,
         phone: body.phone,
         address: body.address,
@@ -27,9 +33,22 @@ export class RequestController {
 
             await requestDB.populate('user', '-password').execPopulate();
 
-            res.json({
-                ok: true,
-                request: requestDB
+            await Service.findById( request.service, function( err, serviceBD ) {
+
+                Technical.findById( request.technical, function( err, technicalBD ) {
+
+                    Costumer.findById( request.costumer, function( err, costumerBD ) {
+
+                        res.json({
+                            ok: true,
+                            request: requestDB,
+                            service: serviceBD,
+                            technical: technicalBD,
+                            costumer: costumerBD
+                        });
+
+                    });
+                });
             });
 
         }).catch( err => {
@@ -93,6 +112,9 @@ export class RequestController {
         var body = req.body;                
 
         const requestUpdate = {
+            valueMaterials: body.valueMaterials,
+            valueAsistimos: body.valueAsistimos,
+            valueCostumer: body.valueCostumer,
             reference: body.reference,
             phone: body.phone,
             address: body.address,

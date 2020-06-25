@@ -41,6 +41,18 @@ const requestSchema = new mongoose_1.Schema({
         ref: 'Technical',
         required: [true, 'the technical is necessary']
     },
+    valueMaterials: {
+        type: Number,
+        required: [true, 'the value Materials is necessary']
+    },
+    valueAsistimos: {
+        type: Number,
+        required: [true, 'the value Asistimos is necessary']
+    },
+    valueCostumer: {
+        type: Number,
+        required: [true, 'the value Costumer is necessary']
+    },
     created: {
         type: Date
     },

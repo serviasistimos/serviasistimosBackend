@@ -62,9 +62,6 @@ export class ServiceController {
         const user = req.user.id;
 
         const technical = {
-        valueMaterials: body.valueMaterials,
-        valueAsistimos: body.valueAsistimos,
-        valueCostumer: body.valueCostumer,
         commentary: body.commentary,
         nameService: body.nameService,
         user: user
@@ -95,9 +92,6 @@ export class ServiceController {
         var body = req.body;                
 
         const serviceUpdate = {
-            valueMaterials: body.valueMaterials,
-            valueAsistimos: body.valueAsistimos,
-            valueCostumer: body.valueCostumer,
             commentary: body.commentary,
             nameService: body.nameService,
             user: user

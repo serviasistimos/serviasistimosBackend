@@ -6,18 +6,6 @@ const serviceSchema = new mongoose_1.Schema({
         type: String,
         required: [true, 'the name Service is necessary']
     },
-    valueMaterials: {
-        type: Number,
-        required: [true, 'the value Materials is necessary']
-    },
-    valueAsistimos: {
-        type: Number,
-        required: [true, 'the value Asistimos is necessary']
-    },
-    valueCostumer: {
-        type: Number,
-        required: [true, 'the value Costumer is necessary']
-    },
     commentary: {
         type: String,
         required: [false, 'the commentary is necessary']
