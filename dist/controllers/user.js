@@ -205,5 +205,27 @@ class UserController {
             });
         });
     }
+    deleteUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var userId = req.params.id;
+            yield user_1.User.findByIdAndDelete(userId, (err, userDB) => {
+                if (err) {
+                    throw err;
+                }
+                if (!userDB) {
+                    res.json({
+                        ok: false,
+                        message: 'this User dont exist'
+                    });
+                }
+                else {
+                    res.json({
+                        ok: true,
+                        message: 'delete User success'
+                    });
+                }
+            });
+        });
+    }
 }
 exports.UserController = UserController;

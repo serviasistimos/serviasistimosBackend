@@ -3,6 +3,8 @@ import { Requests } from "../models/request";
 import { Service } from "../models/service";
 import { Technical } from "../models/technical";
 import { Costumer } from "../models/costumer";
+import { RequestCommentary } from "../models/requestCommentary";
+
 
 export class RequestController {
 
@@ -93,12 +95,28 @@ export class RequestController {
                     message: 'request dont exist'
                 })
             } else {
-                res.json({
-                    ok: true,
-                    status: 200,
-                    message: 'get request success',
-                    request: requestBD
+                RequestCommentary.find( { where: { request: requestId } })
+                .then( requestCommentariesBD => {
+
+                    if ( requestCommentariesBD ) {
+                        res.json({
+                            ok: true,
+                            status: 200,
+                            message: 'get request success',
+                            request: requestBD,
+                            requestCommentary: requestCommentariesBD
+                        })
+                    } else {
+                        res.json({
+                            ok: true,
+                            status: 200,
+                            message: 'get request success',
+                            request: requestBD,
+                            requestCommentary: 'there aren´t commentaries in this request'
+                        })
+                    }
                 })
+                
             }
 
         })

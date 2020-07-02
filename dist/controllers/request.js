@@ -13,6 +13,7 @@ const request_1 = require("../models/request");
 const service_1 = require("../models/service");
 const technical_1 = require("../models/technical");
 const costumer_1 = require("../models/costumer");
+const requestCommentary_1 = require("../models/requestCommentary");
 class RequestController {
     constructor() { }
     createRequest(req, res) {
@@ -90,11 +91,26 @@ class RequestController {
                     });
                 }
                 else {
-                    res.json({
-                        ok: true,
-                        status: 200,
-                        message: 'get request success',
-                        request: requestBD
+                    requestCommentary_1.RequestCommentary.find({ where: { request: requestId } })
+                        .then(requestCommentariesBD => {
+                        if (requestCommentariesBD) {
+                            res.json({
+                                ok: true,
+                                status: 200,
+                                message: 'get request success',
+                                request: requestBD,
+                                requestCommentary: requestCommentariesBD
+                            });
+                        }
+                        else {
+                            res.json({
+                                ok: true,
+                                status: 200,
+                                message: 'get request success',
+                                request: requestBD,
+                                requestCommentary: 'there aren´t commentaries in this request'
+                            });
+                        }
                     });
                 }
             });

@@ -41,6 +41,11 @@ const requestSchema = new mongoose_1.Schema({
         ref: 'Technical',
         required: [true, 'the technical is necessary']
     },
+    insurance: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: 'Insurance',
+        required: [true, 'the insurance is necessary']
+    },
     valueMaterials: {
         type: Number,
         required: [true, 'the value Materials is necessary']

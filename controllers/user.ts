@@ -257,4 +257,25 @@ export class UserController {
         });
     }
 
+    public async deleteUser( req: any, res: Response ) {
+
+        var userId = req.params.id;
+        await User.findByIdAndDelete( userId, ( err, userDB ) => {
+
+            if ( err ) { throw err; }
+            if ( !userDB ) {
+                res.json({
+                    ok: false,
+                    message: 'this User dont exist'
+                })
+            } else {
+                res.json({
+                    ok: true,
+                    message: 'delete User success'
+                }) 
+            }
+
+        });
+    }
+
 }

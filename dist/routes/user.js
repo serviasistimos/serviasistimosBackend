@@ -12,4 +12,5 @@ userRoutes.post('/uploadImage', authentication_1.verifyToken, (req, res) => { us
 userRoutes.get('/image/:userId/:img', (req, res) => { userController.showImage(req, res); });
 userRoutes.get('/getUsers', authentication_1.verifyToken, (req, res) => { userController.getUsers(req, res); });
 userRoutes.get('/getUser/:id', authentication_1.verifyToken, (req, res) => { userController.getUserById(req, res); });
+userRoutes.delete('/deleteUser/:id', authentication_1.verifyToken, (req, res) => { userController.deleteUser(req, res); });
 exports.default = userRoutes;
