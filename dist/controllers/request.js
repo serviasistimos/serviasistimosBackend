@@ -90,8 +90,8 @@ class RequestController {
                         message: 'request dont exist'
                     });
                 }
-                else {
-                    requestCommentary_1.RequestCommentary.find({ where: { request: requestId } })
+                else if (requestBD) {
+                    requestCommentary_1.RequestCommentary.find({ request: requestId })
                         .then(requestCommentariesBD => {
                         if (requestCommentariesBD) {
                             res.json({

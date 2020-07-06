@@ -4,6 +4,7 @@ import { Service } from "../models/service";
 import { Technical } from "../models/technical";
 import { Costumer } from "../models/costumer";
 import { RequestCommentary } from "../models/requestCommentary";
+import { User } from "../models/user";
 
 
 export class RequestController {
@@ -94,8 +95,9 @@ export class RequestController {
                     status: 401,
                     message: 'request dont exist'
                 })
-            } else {
-                RequestCommentary.find( { where: { request: requestId } })
+            } else if ( requestBD ) {
+
+                RequestCommentary.find( { request: requestId })
                 .then( requestCommentariesBD => {
 
                     if ( requestCommentariesBD ) {
@@ -106,6 +108,7 @@ export class RequestController {
                             request: requestBD,
                             requestCommentary: requestCommentariesBD
                         })
+
                     } else {
                         res.json({
                             ok: true,
