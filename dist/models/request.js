@@ -24,7 +24,7 @@ const requestSchema = new mongoose_1.Schema({
     },
     state: {
         type: String,
-        required: [true, 'the department is necessary']
+        required: [true, 'the state is necessary']
     },
     costumer: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -45,6 +45,10 @@ const requestSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         ref: 'Insurance',
         required: [true, 'the insurance is necessary']
+    },
+    commentary: {
+        type: String,
+        required: [true, 'the commentary is necessary']
     },
     valueMaterials: {
         type: Number,

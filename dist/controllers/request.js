@@ -14,6 +14,7 @@ const service_1 = require("../models/service");
 const technical_1 = require("../models/technical");
 const costumer_1 = require("../models/costumer");
 const requestCommentary_1 = require("../models/requestCommentary");
+const insurance_1 = require("../models/insurance");
 class RequestController {
     constructor() { }
     createRequest(req, res) {
@@ -28,11 +29,13 @@ class RequestController {
                 phone: body.phone,
                 address: body.address,
                 city: body.city,
+                commentary: body.commentary,
                 department: body.department,
                 state: body.state,
                 costumer: body.costumer,
                 service: body.service,
                 technical: body.technical,
+                insurance: body.insurance,
                 user: user
             };
             yield request_1.Requests.create(request).then((requestDB) => __awaiter(this, void 0, void 0, function* () {
@@ -91,26 +94,42 @@ class RequestController {
                     });
                 }
                 else if (requestBD) {
-                    requestCommentary_1.RequestCommentary.find({ request: requestId })
-                        .then(requestCommentariesBD => {
-                        if (requestCommentariesBD) {
-                            res.json({
-                                ok: true,
-                                status: 200,
-                                message: 'get request success',
-                                request: requestBD,
-                                requestCommentary: requestCommentariesBD
+                    service_1.Service.findById(requestBD.service, function (err, serviceBD) {
+                        technical_1.Technical.findById(requestBD.technical, function (err, technicalBD) {
+                            costumer_1.Costumer.findById(requestBD.costumer, function (err, costumerBD) {
+                                insurance_1.Insurance.findById(requestBD.insurance, function (err, insuranceBD) {
+                                    requestCommentary_1.RequestCommentary.find({ request: requestId })
+                                        .then(commentaries => {
+                                        if (commentaries.length > 0) {
+                                            res.json({
+                                                ok: true,
+                                                status: 200,
+                                                request: requestBD,
+                                                commentaries: commentaries,
+                                                service: serviceBD,
+                                                technical: technicalBD,
+                                                costumer: costumerBD,
+                                                insurance: insuranceBD,
+                                                message: 'get request success'
+                                            });
+                                        }
+                                        else {
+                                            res.json({
+                                                ok: true,
+                                                status: 200,
+                                                request: requestBD,
+                                                commentaries: 'there arent commentaries in this request',
+                                                service: serviceBD,
+                                                technical: technicalBD,
+                                                costumer: costumerBD,
+                                                insurance: insuranceBD,
+                                                message: 'get request success'
+                                            });
+                                        }
+                                    });
+                                });
                             });
-                        }
-                        else {
-                            res.json({
-                                ok: true,
-                                status: 200,
-                                message: 'get request success',
-                                request: requestBD,
-                                requestCommentary: 'there aren´t commentaries in this request'
-                            });
-                        }
+                        });
                     });
                 }
             });
@@ -129,6 +148,7 @@ class RequestController {
                 phone: body.phone,
                 address: body.address,
                 city: body.city,
+                commentary: body.commentary,
                 department: body.department,
                 state: body.state,
                 costumer: body.costumer,

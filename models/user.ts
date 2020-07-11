@@ -61,4 +61,4 @@ interface IUser extends Document {
     comparePassword( password: string ): boolean;
 }
 
-export const User = model<IUser>('User', userSchema);
+export const User = model<any>('User', userSchema);

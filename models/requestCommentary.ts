@@ -35,4 +35,4 @@ interface IrequestCommentary extends Document {
     user: string;
 }
 
-export const RequestCommentary = model<IrequestCommentary>('RequestCommentary', requestCommentarySchema);
+export const RequestCommentary = model<any>('RequestCommentary', requestCommentarySchema);

@@ -24,7 +24,7 @@ const requestSchema = new Schema({
     },
     state: {
         type: String,
-        required: [true, 'the department is necessary']
+        required: [true, 'the state is necessary']
     },
     costumer: {
         type: Schema.Types.ObjectId,
@@ -45,6 +45,10 @@ const requestSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Insurance',
         required: [true, 'the insurance is necessary']
+    },
+    commentary: {
+        type: String,
+        required: [true, 'the commentary is necessary']
     },
     valueMaterials: {
         type: Number,
@@ -78,6 +82,7 @@ requestSchema.pre<Irequest>('save', function( next ) {
 interface Irequest extends Document {
     costumer: number;
     insurance: number;
+    commentary: string;
     reference: number;
     phone: number;
     address: string;
@@ -88,4 +93,4 @@ interface Irequest extends Document {
     created: Date;
 }
 
-export const Requests = model<Irequest>('Requests', requestSchema);
+export const Requests = model<any>('Requests', requestSchema);

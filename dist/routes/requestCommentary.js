@@ -6,5 +6,6 @@ const requestCommentary_1 = require("../controllers/requestCommentary");
 const requestCommentaryRoutes = express_1.Router();
 const requestCommentaryController = new requestCommentary_1.RequestCommentaryController();
 requestCommentaryRoutes.post('/createRequestCommentary', [authentication_1.verifyToken], (req, res) => { requestCommentaryController.createRequestCommentary(req, res); });
-requestCommentaryRoutes.get('/getRequestCommentarys', [authentication_1.verifyToken], (req, res) => { requestCommentaryController.getRequestCommentarys(req, res); });
+requestCommentaryRoutes.get('/getRequestCommentaries', [authentication_1.verifyToken], (req, res) => { requestCommentaryController.getRequestCommentaries(req, res); });
+requestCommentaryRoutes.get('/getRequestCommentaryById/:id', [authentication_1.verifyToken], (req, res) => { requestCommentaryController.getRequestCommentaryById(req, res); });
 exports.default = requestCommentaryRoutes;

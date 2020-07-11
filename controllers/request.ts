@@ -4,7 +4,7 @@ import { Service } from "../models/service";
 import { Technical } from "../models/technical";
 import { Costumer } from "../models/costumer";
 import { RequestCommentary } from "../models/requestCommentary";
-import { User } from "../models/user";
+import { Insurance } from "../models/insurance";
 
 
 export class RequestController {
@@ -24,11 +24,13 @@ export class RequestController {
         phone: body.phone,
         address: body.address,
         city: body.city,
+        commentary: body.commentary,
         department: body.department,
         state: body.state,
         costumer: body.costumer,
         service: body.service,
         technical: body.technical,
+        insurance: body.insurance,
         user: user
         };
     
@@ -83,7 +85,7 @@ export class RequestController {
 
     }
 
-    public async getRequestById( req: Request, res: Response ) {
+    public async getRequestById( req: any, res: Response ) {
 
         var requestId = req.params.id;
         Requests.findById( requestId, function( err, requestBD ) {
@@ -96,34 +98,48 @@ export class RequestController {
                     message: 'request dont exist'
                 })
             } else if ( requestBD ) {
-
-                RequestCommentary.find( { request: requestId })
-                .then( requestCommentariesBD => {
-
-                    if ( requestCommentariesBD ) {
-                        res.json({
-                            ok: true,
-                            status: 200,
-                            message: 'get request success',
-                            request: requestBD,
-                            requestCommentary: requestCommentariesBD
-                        })
-
-                    } else {
-                        res.json({
-                            ok: true,
-                            status: 200,
-                            message: 'get request success',
-                            request: requestBD,
-                            requestCommentary: 'there aren´t commentaries in this request'
-                        })
-                    }
-                })
                 
+                Service.findById( requestBD.service, function( err, serviceBD ) {
+                    Technical.findById( requestBD.technical, function( err, technicalBD ) {
+                        Costumer.findById( requestBD.costumer, function( err, costumerBD ) {
+                            Insurance.findById( requestBD.insurance, function( err, insuranceBD ) {
+                                RequestCommentary.find({ request: requestId })
+                                .then( commentaries => {
+                                    if ( commentaries.length > 0 ) {
+                                        
+                                        res.json({
+                                            ok: true,
+                                            status: 200,
+                                            request: requestBD,
+                                            commentaries: commentaries,
+                                            service: serviceBD,
+                                            technical: technicalBD,
+                                            costumer: costumerBD,
+                                            insurance: insuranceBD,
+                                            message: 'get request success'
+                                        }) 
+
+                                    } else {
+                                        res.json({
+                                            ok: true,
+                                            status: 200,
+                                            request: requestBD,
+                                            commentaries: 'there arent commentaries in this request',
+                                            service: serviceBD,
+                                            technical: technicalBD,
+                                            costumer: costumerBD,
+                                            insurance: insuranceBD,
+                                            message: 'get request success'
+                                        }) 
+                                    }
+
+                                })
+                            });
+                        });
+                    });
+                });
             }
-
         })
-
     }
 
     public async updateRequest( req: any, res: Response ) {
@@ -140,6 +156,7 @@ export class RequestController {
             phone: body.phone,
             address: body.address,
             city: body.city,
+            commentary: body.commentary,
             department: body.department,
             state: body.state,
             costumer: body.costumer,

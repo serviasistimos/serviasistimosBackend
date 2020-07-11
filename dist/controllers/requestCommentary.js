@@ -10,9 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const requestCommentary_1 = require("../models/requestCommentary");
+const user_1 = require("../models/user");
 class RequestCommentaryController {
     constructor() { }
-    getRequestCommentarys(req, res) {
+    getRequestCommentaries(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             requestCommentary_1.RequestCommentary.find().then(requestCommentary => {
                 res.json({
@@ -32,6 +33,31 @@ class RequestCommentaryController {
                     message: 'get requestCommentary failed'
                 });
             });
+        });
+    }
+    getRequestCommentaryById(req, res) {
+        var commentaryId = req.params.id;
+        requestCommentary_1.RequestCommentary.findById(commentaryId, function (err, commentaryBD) {
+            if (err) {
+                throw err;
+            }
+            if (!commentaryBD) {
+                res.json({
+                    ok: true,
+                    status: 401,
+                    message: 'this comentary dont exist'
+                });
+            }
+            else {
+                user_1.User.findById(commentaryBD.user, function (err, userBD) {
+                    res.json({
+                        ok: true,
+                        status: 200,
+                        commentary: commentaryBD,
+                        user: userBD
+                    });
+                });
+            }
         });
     }
     createRequestCommentary(req, res) {
