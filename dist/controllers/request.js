@@ -159,6 +159,7 @@ class RequestController {
                 costumer: body.costumer,
                 service: body.service,
                 technical: body.technical,
+                insurance: body.insurance,
                 nameCostumer: body.nameCostumer,
                 nameService: body.nameService,
                 nameTechnical: body.nameTechnical,
