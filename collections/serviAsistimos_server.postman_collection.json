@@ -297,7 +297,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTkyNDk3MjMwLCJleHAiOjE1OTUwODkyMzB9.oGskwbR1mEMYn1tgbkzpfrVyWA5OnE-8F8HUJnFB2KA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NjAxMTIxLCJleHAiOjE1OTcxOTMxMjF9.1dD3Cs9Z3GWTAS7puG8oQ8ejtRB-JQ7K9i1iXCAXr-4",
 								"description": ""
 							}
 						],
@@ -448,7 +448,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTkyNDk3MjMwLCJleHAiOjE1OTUwODkyMzB9.oGskwbR1mEMYn1tgbkzpfrVyWA5OnE-8F8HUJnFB2KA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NjAxMTIxLCJleHAiOjE1OTcxOTMxMjF9.1dD3Cs9Z3GWTAS7puG8oQ8ejtRB-JQ7K9i1iXCAXr-4",
 								"description": ""
 							}
 						],
@@ -691,12 +691,12 @@
 				{
 					"name": "localhost:3000/costumer/costumer/5eea4b03ac8a47355cc02423",
 					"request": {
-						"url": "localhost:3000/costumer/costumer/5eea4b03ac8a47355cc02423",
+						"url": "localhost:3000/costumer/costumer/5eea477221b48832a4b83893",
 						"method": "GET",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTkyNDk3MjMwLCJleHAiOjE1OTUwODkyMzB9.oGskwbR1mEMYn1tgbkzpfrVyWA5OnE-8F8HUJnFB2KA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NjAxMTIxLCJleHAiOjE1OTcxOTMxMjF9.1dD3Cs9Z3GWTAS7puG8oQ8ejtRB-JQ7K9i1iXCAXr-4",
 								"description": ""
 							}
 						],
@@ -769,12 +769,12 @@
 				{
 					"name": "localhost:3000/service/service/5ed54b440c8b090a30189ce5",
 					"request": {
-						"url": "localhost:3000/service/service/5ed54b440c8b090a30189ce5",
+						"url": "localhost:3000/service/service/5eea59173c0ce310b875673f",
 						"method": "GET",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NDk1NTgzLCJleHAiOjE1OTcwODc1ODN9.N-1eFz2muOqwMnLJbYPvxC3YelK5C3WaZCT4oHINySM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NjAxMTIxLCJleHAiOjE1OTcxOTMxMjF9.1dD3Cs9Z3GWTAS7puG8oQ8ejtRB-JQ7K9i1iXCAXr-4",
 								"description": ""
 							}
 						],
@@ -857,7 +857,7 @@
 							},
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NDk1NTgzLCJleHAiOjE1OTcwODc1ODN9.N-1eFz2muOqwMnLJbYPvxC3YelK5C3WaZCT4oHINySM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NjAxMTIxLCJleHAiOjE1OTcxOTMxMjF9.1dD3Cs9Z3GWTAS7puG8oQ8ejtRB-JQ7K9i1iXCAXr-4",
 								"description": ""
 							}
 						],
@@ -947,6 +947,36 @@
 									"value": "5ed0754f4a62d13640e5bc3d",
 									"description": "",
 									"type": "text"
+								},
+								{
+									"key": "nameCostumer",
+									"value": "andiasistencia",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "nameService",
+									"value": "ewwwwwwww",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "nameTechnical",
+									"value": "wilson",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "nameInsurance",
+									"value": "colpatria",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "lastnameTechnical",
+									"value": "morelos",
+									"description": "",
+									"type": "text"
 								}
 							]
 						},
@@ -981,7 +1011,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NDk1NTgzLCJleHAiOjE1OTcwODc1ODN9.N-1eFz2muOqwMnLJbYPvxC3YelK5C3WaZCT4oHINySM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NjAxMTIxLCJleHAiOjE1OTcxOTMxMjF9.1dD3Cs9Z3GWTAS7puG8oQ8ejtRB-JQ7K9i1iXCAXr-4",
 								"description": ""
 							}
 						],
