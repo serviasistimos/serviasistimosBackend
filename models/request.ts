@@ -31,20 +31,40 @@ const requestSchema = new Schema({
         ref: 'Costumer',
         required: [true, 'the costumer is necessary']
     },
+    nameCostumer: {
+        type: String,
+        required: [true, 'the nameCostumer is necessary']
+    },
     service: {
         type: Schema.Types.ObjectId,
         ref: 'Service',
         required: [true, 'the service is necessary']
+    },
+    nameService: {
+        type: String,
+        required: [true, 'the nameService is necessary']
     },
     technical: {
         type: Schema.Types.ObjectId,
         ref: 'Technical',
         required: [true, 'the technical is necessary']
     },
+    nameTechnical: {
+        type: String,
+        required: [true, 'the nameTechnical is necessary']
+    },
+    lastnameTechnical: {
+        type: String,
+        required: [true, 'the lastnameTechnical is necessary']
+    },
     insurance: {
         type: Schema.Types.ObjectId,
         ref: 'Insurance',
         required: [true, 'the insurance is necessary']
+    },
+    nameInsurance: {
+        type: String,
+        required: [true, 'the nameInsurance is necessary']
     },
     commentary: {
         type: String,
@@ -91,6 +111,11 @@ interface Irequest extends Document {
     state: string;
     user: string;
     created: Date;
+    nameCostumer: string;
+    nameService: string;
+    nameTechnical: string;
+    nameInsurance: string;
+    lastnameTechnical: string;
 }
 
 export const Requests = model<any>('Requests', requestSchema);

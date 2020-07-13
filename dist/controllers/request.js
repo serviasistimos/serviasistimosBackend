@@ -36,6 +36,11 @@ class RequestController {
                 service: body.service,
                 technical: body.technical,
                 insurance: body.insurance,
+                nameCostumer: body.nameCostumer,
+                nameService: body.nameService,
+                nameTechnical: body.nameTechnical,
+                nameInsurance: body.nameInsurance,
+                lastnameTechnical: body.lastnameTechnical,
                 user: user
             };
             yield request_1.Requests.create(request).then((requestDB) => __awaiter(this, void 0, void 0, function* () {
@@ -154,6 +159,11 @@ class RequestController {
                 costumer: body.costumer,
                 service: body.service,
                 technical: body.technical,
+                nameCostumer: body.nameCostumer,
+                nameService: body.nameService,
+                nameTechnical: body.nameTechnical,
+                nameInsurance: body.nameInsurance,
+                lastnameTechnical: body.lastnameTechnical,
                 user: user
             };
             request_1.Requests.findByIdAndUpdate(requestId, requestUpdate, { new: true }, (err, requestDB) => {

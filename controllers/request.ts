@@ -31,6 +31,11 @@ export class RequestController {
         service: body.service,
         technical: body.technical,
         insurance: body.insurance,
+        nameCostumer: body.nameCostumer,
+        nameService: body.nameService,
+        nameTechnical: body.nameTechnical,
+        nameInsurance: body.nameInsurance,
+        lastnameTechnical: body.lastnameTechnical,
         user: user
         };
     
@@ -162,6 +167,11 @@ export class RequestController {
             costumer: body.costumer,
             service: body.service,
             technical: body.technical,
+            nameCostumer: body.nameCostumer,
+            nameService: body.nameService,
+            nameTechnical: body.nameTechnical,
+            nameInsurance: body.nameInsurance,
+            lastnameTechnical: body.lastnameTechnical,
             user: user
         }
 
