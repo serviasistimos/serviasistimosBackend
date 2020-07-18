@@ -15,6 +15,7 @@ const technical_1 = require("../models/technical");
 const costumer_1 = require("../models/costumer");
 const requestCommentary_1 = require("../models/requestCommentary");
 const insurance_1 = require("../models/insurance");
+const user_1 = require("../models/user");
 class RequestController {
     constructor() { }
     createRequest(req, res) {
@@ -103,34 +104,38 @@ class RequestController {
                         technical_1.Technical.findById(requestBD.technical, function (err, technicalBD) {
                             costumer_1.Costumer.findById(requestBD.costumer, function (err, costumerBD) {
                                 insurance_1.Insurance.findById(requestBD.insurance, function (err, insuranceBD) {
-                                    requestCommentary_1.RequestCommentary.find({ request: requestId })
-                                        .then(commentaries => {
-                                        if (commentaries.length > 0) {
-                                            res.json({
-                                                ok: true,
-                                                status: 200,
-                                                request: requestBD,
-                                                commentaries: commentaries,
-                                                service: serviceBD,
-                                                technical: technicalBD,
-                                                costumer: costumerBD,
-                                                insurance: insuranceBD,
-                                                message: 'get request success'
-                                            });
-                                        }
-                                        else {
-                                            res.json({
-                                                ok: true,
-                                                status: 200,
-                                                request: requestBD,
-                                                commentaries: 'there arent commentaries in this request',
-                                                service: serviceBD,
-                                                technical: technicalBD,
-                                                costumer: costumerBD,
-                                                insurance: insuranceBD,
-                                                message: 'get request success'
-                                            });
-                                        }
+                                    user_1.User.findById(requestBD.user, function (err, userBD) {
+                                        requestCommentary_1.RequestCommentary.find({ request: requestId })
+                                            .then(commentaries => {
+                                            if (commentaries.length > 0) {
+                                                res.json({
+                                                    ok: true,
+                                                    status: 200,
+                                                    request: requestBD,
+                                                    commentaries: commentaries,
+                                                    service: serviceBD,
+                                                    technical: technicalBD,
+                                                    costumer: costumerBD,
+                                                    insurance: insuranceBD,
+                                                    user: userBD,
+                                                    message: 'get request success'
+                                                });
+                                            }
+                                            else {
+                                                res.json({
+                                                    ok: true,
+                                                    status: 200,
+                                                    request: requestBD,
+                                                    commentaries: 'there arent commentaries in this request',
+                                                    service: serviceBD,
+                                                    technical: technicalBD,
+                                                    costumer: costumerBD,
+                                                    insurance: insuranceBD,
+                                                    user: userBD,
+                                                    message: 'get request success'
+                                                });
+                                            }
+                                        });
                                     });
                                 });
                             });

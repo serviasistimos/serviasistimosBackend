@@ -206,16 +206,26 @@ export class UserController {
 
                 res.json({
                     ok: true,
+                    status: 200,
                     message: 'get user successfull',
                     user: user
                 })
 
             }
 
+            if ( !user ) {
+                res.json({
+                    ok: false,
+                    status: 401,
+                    message: 'this user dont exist in the database'
+                })
+            }
+
             if ( err ) {
 
                 res.json({
                     ok: false,
+                    status: 500,
                     message: 'get user failed',
                     err: err
                 })
