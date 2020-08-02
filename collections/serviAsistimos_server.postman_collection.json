@@ -52,19 +52,19 @@
 								},
 								{
 									"key": "email",
-									"value": "miryam@gmail.com",
+									"value": "prueba@gmail.com",
 									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "miryam",
+									"value": "prueba",
 									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "miryam",
+									"value": "prueba",
 									"description": "",
 									"type": "text"
 								}
@@ -148,7 +148,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVjODQxN2VkMTQ4ZDYyZTRjNDBjZTEyIiwibmFtZSI6InJvbmFsZCBBbGV4YW5kZXIiLCJsYXN0TmFtZSI6IlJvZHJpZ3VleiBDZW5kYWxlcyIsImRvY3VtZW50IjoxMDIzODc3MzMzLCJlbWFpbCI6InJvbmFsZGNlMzdAZ21haWwuY29tIiwiaW1hZ2UiOiJpcm9uLnBuZyJ9LCJpYXQiOjE1OTA1MzU0ODUsImV4cCI6MTU5MzEyNzQ4NX0.L5D11HNVImvmypdvBxbZNonyNSAnKXqv-sPXmp4qsN8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWYyNmRmZTI4MzU0NDIxMTUwZWYyZjRlIiwibmFtZSI6InBydWViYSIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiZG9jdW1lbnQiOjEwMTExMSwiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIn0sImlhdCI6MTU5NjM4MzI1MiwiZXhwIjoxNTk4OTc1MjUyfQ.dHDqalTY5d77yqYak81EG1oN6LtdsNMtcRPEKnILq70",
 								"description": ""
 							},
 							{
@@ -162,7 +162,31 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "ronaldce37@gmail.com",
+									"value": "pruebas@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "pruebas",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "pruebas",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"value": "12345",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pruebas",
 									"description": "",
 									"type": "text"
 								}
@@ -191,7 +215,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk1MDQyMTYzLCJleHAiOjE1OTc2MzQxNjN9.RXtR0l_wroRNkJGCobjPvzAbed3p7a5acp0pvL_ofvs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWYyNmRmZTI4MzU0NDIxMTUwZWYyZjRlIiwibmFtZSI6InBydWViYSIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiZG9jdW1lbnQiOjEwMTExMSwiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIn0sImlhdCI6MTU5NjM4MzI1MiwiZXhwIjoxNTk4OTc1MjUyfQ.dHDqalTY5d77yqYak81EG1oN6LtdsNMtcRPEKnILq70",
 								"description": ""
 							}
 						],
@@ -203,12 +227,12 @@
 				{
 					"name": "localhost:3000/user/getUser/5edd2f6d106fb11c40d74549",
 					"request": {
-						"url": "localhost:3000/user/getUser/5eeb88d851f3a4372cd6ef05",
+						"url": "localhost:3000/user/getUser/5f26dfe28354421150ef2f4e",
 						"method": "GET",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk1MDQyMTYzLCJleHAiOjE1OTc2MzQxNjN9.RXtR0l_wroRNkJGCobjPvzAbed3p7a5acp0pvL_ofvs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWYyNmRmZTI4MzU0NDIxMTUwZWYyZjRlIiwibmFtZSI6InBydWViYSIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiZG9jdW1lbnQiOjEwMTExMSwiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIn0sImlhdCI6MTU5NjM4MzI1MiwiZXhwIjoxNTk4OTc1MjUyfQ.dHDqalTY5d77yqYak81EG1oN6LtdsNMtcRPEKnILq70",
 								"description": ""
 							}
 						],
@@ -220,12 +244,12 @@
 				{
 					"name": "localhost:3000/user/deleteUser/5efd3ea235c24b29fc3db9dd",
 					"request": {
-						"url": "localhost:3000/user/deleteUser/5efd3ea235c24b29fc3db9dd",
+						"url": "localhost:3000/user/deleteUser/5f26dfe28354421150ef2f4e",
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTkzNjU0NzU2LCJleHAiOjE1OTYyNDY3NTZ9.hBEU0MLnOzXD1F15-Ti8xPGQBdWqE8IuEwtG3pKa0m0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWYyNmRmZTI4MzU0NDIxMTUwZWYyZjRlIiwibmFtZSI6InBydWViYSIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiZG9jdW1lbnQiOjEwMTExMSwiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIn0sImlhdCI6MTU5NjM4MzI1MiwiZXhwIjoxNTk4OTc1MjUyfQ.dHDqalTY5d77yqYak81EG1oN6LtdsNMtcRPEKnILq70",
 								"description": ""
 							}
 						],
@@ -431,7 +455,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk0NDk1NTgzLCJleHAiOjE1OTcwODc1ODN9.N-1eFz2muOqwMnLJbYPvxC3YelK5C3WaZCT4oHINySM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk2NDAyODg0LCJleHAiOjE1OTg5OTQ4ODR9.bkE7uSLkzfO98PHrWIYdzg32WMDHWNCtL-0tnGNEcAA",
 								"description": ""
 							}
 						],
@@ -857,7 +881,7 @@
 							},
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk1MDQyMTYzLCJleHAiOjE1OTc2MzQxNjN9.RXtR0l_wroRNkJGCobjPvzAbed3p7a5acp0pvL_ofvs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk2NDAxODg5LCJleHAiOjE1OTg5OTM4ODl9.pvoOvBEs0aejh21hKh9IoulWaFKjuL7YCHFYmwZ2OGc",
 								"description": ""
 							}
 						],
@@ -896,7 +920,7 @@
 								},
 								{
 									"key": "state",
-									"value": "pendiente",
+									"value": "finalizado",
 									"description": "",
 									"type": "text"
 								},
@@ -977,6 +1001,24 @@
 									"value": "morelos",
 									"description": "",
 									"type": "text"
+								},
+								{
+									"key": "materials",
+									"value": "cemento, arena, glifosato",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "workforce",
+									"value": "324234",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "bill",
+									"value": "factura870",
+									"description": "",
+									"type": "text"
 								}
 							]
 						},
@@ -1011,7 +1053,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk1MDQyMTYzLCJleHAiOjE1OTc2MzQxNjN9.RXtR0l_wroRNkJGCobjPvzAbed3p7a5acp0pvL_ofvs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk2NDAyODg0LCJleHAiOjE1OTg5OTQ4ODR9.bkE7uSLkzfO98PHrWIYdzg32WMDHWNCtL-0tnGNEcAA",
 								"description": ""
 							}
 						],
@@ -1040,12 +1082,12 @@
 				{
 					"name": "localhost:3000/request/updateRequest/5ed5594184b61229f8a264d5",
 					"request": {
-						"url": "localhost:3000/request/updateRequest/5f0cebeea35a400720c6ac29",
+						"url": "localhost:3000/request/updateRequest/5f2729273532363e04b58d63",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjg4ZDg1MWYzYTQzNzJjZDZlZjA1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTkzMTIxMTczLCJleHAiOjE1OTU3MTMxNzN9.jG-CdrWQnlSmWxyR1_Of0EYS7rfMRTGjNDUnJ-_a5zw",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk2NDAxODg5LCJleHAiOjE1OTg5OTM4ODl9.pvoOvBEs0aejh21hKh9IoulWaFKjuL7YCHFYmwZ2OGc",
 								"description": ""
 							},
 							{
@@ -1170,6 +1212,24 @@
 									"value": "jajajaja gonorrea",
 									"description": "",
 									"type": "text"
+								},
+								{
+									"key": "materials",
+									"value": "popo chichi",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "workforce",
+									"value": "4444444",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "bill",
+									"value": "factura870",
+									"description": "",
+									"type": "text"
 								}
 							]
 						},
@@ -1186,6 +1246,23 @@
 							{
 								"key": "x-token",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTkyNDk3MjMwLCJleHAiOjE1OTUwODkyMzB9.oGskwbR1mEMYn1tgbkzpfrVyWA5OnE-8F8HUJnFB2KA",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/request/technicalRequests/5eea5f592d688f1118da99b2",
+					"request": {
+						"url": "localhost:3000/request/technicalRequests/5eea5f592d688f1118da99b2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk2NDAyODg0LCJleHAiOjE1OTg5OTQ4ODR9.bkE7uSLkzfO98PHrWIYdzg32WMDHWNCtL-0tnGNEcAA",
 								"description": ""
 							}
 						],

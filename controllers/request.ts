@@ -37,6 +37,9 @@ export class RequestController {
             nameTechnical: body.nameTechnical,
             nameInsurance: body.nameInsurance,
             lastnameTechnical: body.lastnameTechnical,
+            materials: body.materials,
+            workforce: body.workforce,
+            bill: body.bill,
             user: user
         };
 
@@ -178,6 +181,9 @@ export class RequestController {
             nameTechnical: body.nameTechnical,
             nameInsurance: body.nameInsurance,
             lastnameTechnical: body.lastnameTechnical,
+            materials: body.materials,
+            workforce: body.workforce,
+            bill: body.bill,
             user: user
         }
 
@@ -221,6 +227,32 @@ export class RequestController {
             }
 
         });
+    }
+
+    public async getAllRequestByTechnical(req: any, res: Response) {
+
+        var technicalId = req.params.id;
+        await Requests.find({ technical: technicalId, state: 'finalizado' })
+        .then( technicalRequests => {
+            console.log(technicalRequests);
+                if ( !technicalRequests ) {
+                    throw Error;
+                }
+                if ( technicalRequests.length > 0 ) {
+                    res.json({
+                        ok: true,
+                        status: 200,
+                        message: 'technical request get success',
+                        technicalRequest: technicalRequests
+                    })
+                } else {
+                    res.json({
+                        ok: true,
+                        status: 200,
+                        message: 'This technical dont have requests finished'
+                    })
+                }
+        })
     }
 
 }

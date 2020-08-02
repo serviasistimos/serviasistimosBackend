@@ -10,4 +10,5 @@ requestRoutes.get('/getRequests', [authentication_1.verifyToken], (req, res) => 
 requestRoutes.get('/request/:id', authentication_1.verifyToken, (req, res) => { requestController.getRequestById(req, res); });
 requestRoutes.put('/updateRequest/:id', authentication_1.verifyToken, (req, res) => { requestController.updateRequest(req, res); });
 requestRoutes.delete('/deleteRequest/:id', authentication_1.verifyToken, (req, res) => { requestController.deleteRequest(req, res); });
+requestRoutes.get('/technicalRequests/:id', authentication_1.verifyToken, (req, res) => { requestController.getAllRequestByTechnical(req, res); });
 exports.default = requestRoutes;

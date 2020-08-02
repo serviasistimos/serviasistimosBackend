@@ -42,6 +42,9 @@ class RequestController {
                 nameTechnical: body.nameTechnical,
                 nameInsurance: body.nameInsurance,
                 lastnameTechnical: body.lastnameTechnical,
+                materials: body.materials,
+                workforce: body.workforce,
+                bill: body.bill,
                 user: user
             };
             yield request_1.Requests.create(request).then((requestDB) => __awaiter(this, void 0, void 0, function* () {
@@ -170,6 +173,9 @@ class RequestController {
                 nameTechnical: body.nameTechnical,
                 nameInsurance: body.nameInsurance,
                 lastnameTechnical: body.lastnameTechnical,
+                materials: body.materials,
+                workforce: body.workforce,
+                bill: body.bill,
                 user: user
             };
             request_1.Requests.findByIdAndUpdate(requestId, requestUpdate, { new: true }, (err, requestDB) => {
@@ -208,6 +214,33 @@ class RequestController {
                     res.json({
                         ok: true,
                         message: 'delete request success'
+                    });
+                }
+            });
+        });
+    }
+    getAllRequestByTechnical(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var technicalId = req.params.id;
+            yield request_1.Requests.find({ technical: technicalId, state: 'finalizado' })
+                .then(technicalRequests => {
+                console.log(technicalRequests);
+                if (!technicalRequests) {
+                    throw Error;
+                }
+                if (technicalRequests.length > 0) {
+                    res.json({
+                        ok: true,
+                        status: 200,
+                        message: 'technical request get success',
+                        technicalRequest: technicalRequests
+                    });
+                }
+                else {
+                    res.json({
+                        ok: true,
+                        status: 200,
+                        message: 'This technical dont have requests finished'
                     });
                 }
             });

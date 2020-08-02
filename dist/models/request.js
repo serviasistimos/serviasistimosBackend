@@ -70,9 +70,21 @@ const requestSchema = new mongoose_1.Schema({
         type: String,
         required: [true, 'the commentary is necessary']
     },
+    materials: {
+        type: String,
+        required: [true, 'the materials is necessary']
+    },
+    bill: {
+        type: String,
+        required: [true, 'the bill is necessary']
+    },
     valueMaterials: {
         type: Number,
         required: [true, 'the value Materials is necessary']
+    },
+    workforce: {
+        type: Number,
+        required: [true, 'the value workforce is necessary']
     },
     valueAsistimos: {
         type: Number,

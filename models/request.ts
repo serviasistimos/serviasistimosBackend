@@ -70,9 +70,21 @@ const requestSchema = new Schema({
         type: String,
         required: [true, 'the commentary is necessary']
     },
+    materials: {
+        type: String,
+        required: [true, 'the materials is necessary']
+    },
+    bill: {
+        type: String,
+        required: [true, 'the bill is necessary']
+    },
     valueMaterials: {
         type: Number,
         required: [true, 'the value Materials is necessary']
+    },
+    workforce: {
+        type: Number,
+        required: [true, 'the value workforce is necessary']
     },
     valueAsistimos: {
         type: Number,
@@ -116,6 +128,12 @@ interface Irequest extends Document {
     nameTechnical: string;
     nameInsurance: string;
     lastnameTechnical: string;
+    valueMaterials: number;
+    valueAsistimos: number;
+    valueCostumer: number;
+    materials: string;
+    workforce: number;
+    bill: string;
 }
 
 export const Requests = model<any>('Requests', requestSchema);

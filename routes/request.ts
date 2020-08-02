@@ -11,6 +11,7 @@ requestRoutes.get('/getRequests', [ verifyToken ], ( req: Request, res: Response
 requestRoutes.get('/request/:id', verifyToken, ( req: Request, res: Response ) => { requestController.getRequestById(req, res) });
 requestRoutes.put('/updateRequest/:id', verifyToken, ( req: Request, res: Response ) => { requestController.updateRequest(req, res) });
 requestRoutes.delete('/deleteRequest/:id', verifyToken, ( req: Request, res: Response ) => { requestController.deleteRequest(req, res) });
+requestRoutes.get('/technicalRequests/:id', verifyToken, ( req: Request, res: Response ) => { requestController.getAllRequestByTechnical(req, res) });
 
 export default
     requestRoutes;

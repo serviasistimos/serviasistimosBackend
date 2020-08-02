@@ -34,7 +34,7 @@ server.app.use('/requestCommentary', requestCommentaryRoutes);
 
 
 //connection BD
-// mongodb://localhost:27017/serviAsistimos
+//mongodb://localhost:27017/serviAsistimos
 //mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority
 mongoose.connect('mongodb+srv://dbAsistimos:dbAsistimos@cluster0-mvxvy.mongodb.net/dbAsistimos?retryWrites=true&w=majority',
                 {
