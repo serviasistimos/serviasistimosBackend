@@ -25,6 +25,10 @@ const technicalSchema = new mongoose_1.Schema({
     specialty: {
         type: String,
         required: [true, 'the specialty is necessary']
+    },
+    numberBill: {
+        type: Number,
+        required: [true, 'the numberBill is necessary']
     }
 });
 exports.Technical = mongoose_1.model('Technical', technicalSchema);

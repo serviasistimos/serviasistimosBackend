@@ -67,6 +67,7 @@ export class TechnicalController {
             email: body.email,
             phone: body.phone,
             specialty: body.specialty,
+            numberBill: body.numberBill
         };
     
         await Technical.create( technical ).then( technicalDB => {
@@ -97,6 +98,7 @@ export class TechnicalController {
             email: body.email,
             phone: body.phone,
             specialty: body.specialty,
+            numberBill: body.numberBill,
             user: user
         }
 

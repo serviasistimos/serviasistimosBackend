@@ -25,6 +25,10 @@ const technicalSchema = new Schema({
     specialty: {
         type: String,
         required: [true, 'the specialty is necessary']
+    },
+    numberBill: {
+        type: Number,
+        required: [true, 'the numberBill is necessary']
     }
 });
 
@@ -35,6 +39,7 @@ interface Itechnical extends Document {
     email: string;
     phone: number;
     specialty: string;
+    numberBill: number;
 }
 
 export const Technical = model<Itechnical>('Technical', technicalSchema);
