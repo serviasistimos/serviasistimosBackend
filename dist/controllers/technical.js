@@ -69,7 +69,8 @@ class TechnicalController {
                 email: body.email,
                 phone: body.phone,
                 specialty: body.specialty,
-                numberBill: body.numberBill
+                numberBill: body.numberBill,
+                bank: body.bank
             };
             yield technical_1.Technical.create(technical).then(technicalDB => {
                 res.json({
@@ -97,6 +98,7 @@ class TechnicalController {
                 phone: body.phone,
                 specialty: body.specialty,
                 numberBill: body.numberBill,
+                bank: body.bank,
                 user: user
             };
             technical_1.Technical.findByIdAndUpdate(technicalId, technicalUpdate, { new: true }, (err, technicalDB) => {
