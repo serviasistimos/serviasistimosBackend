@@ -393,7 +393,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWVlYjhhMmE4M2U0MzAyMzJjZWJlMzE1IiwibmFtZSI6InNlY28iLCJsYXN0TmFtZSI6Imhlcm5hbmRleiIsImRvY3VtZW50IjoxMDIzODczLCJlbWFpbCI6InNlY29AZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTkyNDk3MjMwLCJleHAiOjE1OTUwODkyMzB9.oGskwbR1mEMYn1tgbkzpfrVyWA5OnE-8F8HUJnFB2KA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNWYyNzM2ZTA1NGNjOTgzZjRjZTI2NGIyIiwibmFtZSI6InBydWViYSIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiZG9jdW1lbnQiOjEwMTExMSwiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiaW1hZ2UiOltdfSwiaWF0IjoxNTk3Mjc0NTEwLCJleHAiOjE1OTk4NjY1MTB9.h4i__1KZtlsDtgb8v0ScaG4Z_bk2p875l4ObasHj1Ww",
 								"description": ""
 							},
 							{
@@ -407,7 +407,7 @@
 							"urlencoded": [
 								{
 									"key": "nameTechnical",
-									"value": "camilo",
+									"value": "sss",
 									"description": "",
 									"type": "text"
 								},
@@ -419,25 +419,37 @@
 								},
 								{
 									"key": "document",
-									"value": "21343333",
+									"value": "2134344",
 									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "camilo@hotmail.com",
+									"value": "sss@hotmail.com",
 									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "3118482433",
+									"value": "3118482444",
 									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "specialty",
 									"value": "cañeria",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "numberBill",
+									"value": "234567444654",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "bank",
+									"value": "bancolombia",
 									"description": "",
 									"type": "text"
 								}
