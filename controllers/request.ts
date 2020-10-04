@@ -21,7 +21,8 @@ export class RequestController {
             valueMaterials: body.valueMaterials,
             valueAsistimos: body.valueAsistimos,
             valueCostumer: body.valueCostumer,
-            reference: body.reference,
+            assistance: body.assistance,
+            economicMovement: body.economicMovement,
             phone: body.phone,
             address: body.address,
             city: body.city,
@@ -113,7 +114,7 @@ export class RequestController {
                         Costumer.findById(requestBD.costumer, function (err, costumerBD) {
                             Insurance.findById(requestBD.insurance, function (err, insuranceBD) {
                                 User.findById(requestBD.user, function (err, userBD) {
-                                    RequestCommentary.find({ request: requestId })
+                                    RequestCommentary.find({request: requestId })
                                         .then(commentaries => {
                                             if (commentaries.length > 0) {
 
@@ -165,7 +166,8 @@ export class RequestController {
             valueMaterials: body.valueMaterials,
             valueAsistimos: body.valueAsistimos,
             valueCostumer: body.valueCostumer,
-            reference: body.reference,
+            assistance: body.assistance,
+            economicMovement: body.economicMovement,
             phone: body.phone,
             address: body.address,
             city: body.city,

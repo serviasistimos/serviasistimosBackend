@@ -2,9 +2,9 @@ import { Schema, Document, model} from 'mongoose';
 
 const requestSchema = new Schema({
 
-    reference: {
+    assistance: {
         type: String,
-        required: [true, 'the reference is necessary']
+        required: [true, 'the assistance is necessary']
     },
     phone: {
         type: Number,
@@ -13,6 +13,10 @@ const requestSchema = new Schema({
     address: {
         type: String,
         required: [true, 'the address is necessary']
+    },
+    economicMovement: {
+        type: String,
+        required: [true, 'the economicMovement is necessary']
     },
     city: {
         type: String,
@@ -115,7 +119,8 @@ interface Irequest extends Document {
     costumer: number;
     insurance: number;
     commentary: string;
-    reference: number;
+    assistance: number;
+    economicMovement: string;
     phone: number;
     address: string;
     city: string;

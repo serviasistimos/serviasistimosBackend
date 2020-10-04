@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const requestSchema = new mongoose_1.Schema({
-    reference: {
+    assistance: {
         type: String,
-        required: [true, 'the reference is necessary']
+        required: [true, 'the assistance is necessary']
     },
     phone: {
         type: Number,
@@ -13,6 +13,10 @@ const requestSchema = new mongoose_1.Schema({
     address: {
         type: String,
         required: [true, 'the address is necessary']
+    },
+    economicMovement: {
+        type: String,
+        required: [true, 'the economicMovement is necessary']
     },
     city: {
         type: String,

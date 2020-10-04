@@ -95,9 +95,9 @@ class UserController {
         const body = req.body;
         const images = this.fileSystem.imagesSinceTempToPost(req.user.id);
         const user = {
-            email: body.email || body.email,
-            password: body.password || body.password,
-            image: images
+            email: body.email || req.user.email,
+            password: bcryptjs_1.default.hashSync(body.password, 10) || req.user.password,
+            image: images || req.user.image
         };
         user_1.User.findByIdAndUpdate(req.user.id, user, { new: true }, (err, userDB) => {
             if (err)

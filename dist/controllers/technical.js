@@ -68,6 +68,8 @@ class TechnicalController {
                 document: body.document,
                 email: body.email,
                 phone: body.phone,
+                city: body.city,
+                department: body.department,
                 specialty: body.specialty,
                 numberBill: body.numberBill,
                 bank: body.bank
@@ -96,6 +98,8 @@ class TechnicalController {
                 document: body.document,
                 email: body.email,
                 phone: body.phone,
+                city: body.city,
+                department: body.department,
                 specialty: body.specialty,
                 numberBill: body.numberBill,
                 bank: body.bank,

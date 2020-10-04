@@ -14,6 +14,14 @@ const technicalSchema = new mongoose_1.Schema({
         type: Number,
         required: [true, 'the document is necessary']
     },
+    city: {
+        type: String,
+        required: [true, 'the city is necessary']
+    },
+    department: {
+        type: String,
+        required: [true, 'the department is necessary']
+    },
     email: {
         type: String,
         required: [true, 'the email is necessary']

@@ -14,6 +14,14 @@ const technicalSchema = new Schema({
         type: Number,
         required: [true, 'the document is necessary']
     },
+    city: {
+        type: String,
+        required: [true, 'the city is necessary']
+    },
+    department: {
+        type: String,
+        required: [true, 'the department is necessary']
+    },
     email: {
         type: String,
         required: [true, 'the email is necessary']
@@ -42,6 +50,8 @@ interface Itechnical extends Document {
     document: number;
     email: string;
     phone: number;
+    city: string;
+    department: string;
     specialty: string;
     numberBill: number;
     bank: string;
