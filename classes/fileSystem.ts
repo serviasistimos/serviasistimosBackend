@@ -8,7 +8,7 @@ export default class FileSystem {
 
     saveImageTemp( file: any, userId: string ) {
 
-        return new Promise( ( resolve, reject ) => {
+        return new Promise<void>( ( resolve, reject ) => {
 
         //create folder
         const path = this.createFolderUser( userId );

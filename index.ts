@@ -1,7 +1,8 @@
 import Server from './classes/server';
 import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import cors from 'cors';
 import fileUpload from 'express-fileupload';
+import express from "express";
 
 import insuranceRoutes from './routes/insurance';
 import technicalRoutes from './routes/technical';
@@ -12,12 +13,13 @@ import userRoutes from './routes/user';
 import insuranceCostumerRoutes from './routes/insuranceCostumer';
 import requestCommentaryRoutes from './routes/requestCommentary';
 
-
 const server = new Server();
 
 //bodyParser
-server.app.use( bodyParser.urlencoded({ extended: true }) );
-server.app.use( bodyParser.json() );
+server.app.use( express.urlencoded({ extended: true }) );
+server.app.use( express.json() );
+
+server.app.use(cors());
 
 //fileUpload
 server.app.use( fileUpload() );

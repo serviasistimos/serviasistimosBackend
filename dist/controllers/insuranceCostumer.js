@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.InsuranceCostumerController = void 0;
 const insuranceCostumer_1 = require("../models/insuranceCostumer");
 class InsuranceCostumerController {
     constructor() { }

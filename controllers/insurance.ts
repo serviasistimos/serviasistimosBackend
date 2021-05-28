@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Insurance } from "../models/insurance";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import Token from "../classes/token";
 
 export class InsuranceController {
