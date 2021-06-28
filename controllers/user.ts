@@ -82,7 +82,6 @@ export class UserController {
                     message: 'there isnt any user with that ID'
                 });
             }
-
             res.json({
                 ok: true,
                 user: userDB
