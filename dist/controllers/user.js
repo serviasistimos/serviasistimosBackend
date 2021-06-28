@@ -35,17 +35,8 @@ class UserController {
                 image: body.image
             };
             yield user_1.User.create(user).then(userDB => {
-                const tokenUser = token_1.default.getJwtToken({
-                    id: userDB.id,
-                    name: userDB.name,
-                    lastName: userDB.lastName,
-                    document: userDB.document,
-                    email: userDB.email,
-                    image: userDB.image
-                });
                 res.json({
                     ok: true,
-                    token: tokenUser,
                     user: userDB
                 });
             }).catch(err => {
@@ -75,18 +66,13 @@ class UserController {
                         lastName: userDB.lastName,
                         document: userDB.document,
                         email: userDB.email,
+                        password: userDB.password,
                         image: userDB.image
                     });
                     res.json({
                         ok: true,
                         token: tokenUser,
                         user: userDB
-                    });
-                }
-                else {
-                    return res.json({
-                        ok: false,
-                        message: 'user/password invalid ***'
                     });
                 }
             });
@@ -97,7 +83,7 @@ class UserController {
         const images = this.fileSystem.imagesSinceTempToPost(req.user.id);
         const user = {
             email: body.email || req.user.email,
-            password: bcryptjs_1.default.hashSync(body.password, 10) || req.user.password,
+            password: body.password ? bcryptjs_1.default.hashSync(body.password, 10) : req.user.password,
             image: images || req.user.image
         };
         user_1.User.findByIdAndUpdate(req.user.id, user, { new: true }, (err, userDB) => {
@@ -109,18 +95,8 @@ class UserController {
                     message: 'there isnt any user with that ID'
                 });
             }
-            const tokenUser = token_1.default.getJwtToken({
-                id: userDB.id,
-                name: userDB.name,
-                lastName: userDB.lastName,
-                document: userDB.document,
-                email: userDB.email,
-                nickname: userDB.nickname,
-                image: userDB.image
-            });
             res.json({
                 ok: true,
-                token: tokenUser,
                 user: userDB
             });
         });
